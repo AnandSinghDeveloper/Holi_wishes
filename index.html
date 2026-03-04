@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Holi – From Anand 🎨</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;min-height:100vh;background:#0d0d0d;font-family:'Poppins',sans-serif;display:flex;flex-direction:column;align-items:center;padding:16px 16px 40px;gap:28px}
+
+/* ───── BANNER ───── */
+.banner{
+  position:relative;width:100%;max-width:860px;
+  border-radius:clamp(16px,3vw,28px);
+  background:linear-gradient(135deg,#1a0030 0%,#0b002a 50%,#0d1a00 100%);
+  overflow:hidden;
+  box-shadow:0 0 80px rgba(255,100,0,.3),0 0 160px rgba(180,0,255,.2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:clamp(28px,6vw,56px) clamp(16px,4vw,48px);
+}
+.splash{position:absolute;border-radius:50%;filter:blur(clamp(30px,6vw,60px));opacity:0;animation:splashIn 1s forwards;pointer-events:none}
+.s1{width:clamp(100px,32vw,260px);height:clamp(100px,32vw,260px);background:rgba(255,60,120,.55);top:-15%;left:-8%;animation-delay:.1s}
+.s2{width:clamp(80px,25vw,200px);height:clamp(80px,25vw,200px);background:rgba(255,160,0,.6);top:10%;right:-5%;animation-delay:.3s}
+.s3{width:clamp(90px,28vw,220px);height:clamp(90px,28vw,220px);background:rgba(0,200,255,.45);bottom:-12%;left:10%;animation-delay:.5s}
+.s4{width:clamp(70px,22vw,180px);height:clamp(70px,22vw,180px);background:rgba(80,255,100,.4);bottom:-8%;right:14%;animation-delay:.4s}
+.s5{width:clamp(60px,18vw,150px);height:clamp(60px,18vw,150px);background:rgba(180,0,255,.5);top:35%;left:38%;animation-delay:.6s}
+.s6{width:clamp(40px,12vw,100px);height:clamp(40px,12vw,100px);background:rgba(255,220,0,.6);top:-5%;left:40%;animation-delay:.2s}
+@keyframes splashIn{to{opacity:1}}
+.bdot{position:absolute;border-radius:50%;opacity:0;animation:floatDot linear infinite;pointer-events:none}
+@keyframes floatDot{0%{transform:translateY(0) scale(1);opacity:0}10%{opacity:.8}90%{opacity:.6}100%{transform:translateY(-120vh) scale(.3);opacity:0}}
+.blabel{position:relative;z-index:10;font-weight:300;font-size:clamp(9px,2.5vw,14px);letter-spacing:clamp(3px,1.5vw,6px);text-transform:uppercase;color:rgba(255,220,180,.85);margin-bottom:4px;opacity:0;transform:translateY(20px);animation:slideUp .7s .8s forwards;text-align:center}
+.btitle{position:relative;z-index:10;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(44px,13vw,92px);line-height:1;background:linear-gradient(90deg,#ff6a00,#ff2d78,#ffcc00,#00eaff,#b400ff,#ff6a00);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shiftGrad 4s linear infinite,slideUp .7s 1s forwards;opacity:0;transform:translateY(30px);filter:drop-shadow(0 0 18px rgba(255,100,0,.6));text-align:center}
+@keyframes shiftGrad{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+.bsub{position:relative;z-index:10;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,4vw,28px);color:rgba(255,240,200,.9);margin-top:4px;letter-spacing:clamp(1px,.5vw,2px);opacity:0;transform:translateY(20px);animation:slideUp .7s 1.3s forwards;text-shadow:0 0 20px rgba(255,160,0,.5);text-align:center}
+.bdiv{position:relative;z-index:10;width:clamp(100px,40vw,200px);height:2px;margin:clamp(10px,3vw,18px) auto;background:linear-gradient(90deg,transparent,#ffcc00,#ff2d78,transparent);opacity:0;animation:slideUp .5s 1.5s forwards;border-radius:2px}
+.bwish{position:relative;z-index:10;text-align:center;font-weight:300;font-size:clamp(11px,2.8vw,13.5px);color:rgba(255,230,200,.85);line-height:1.9;max-width:560px;padding:0 4px;opacity:0;animation:slideUp .7s 1.7s forwards}
+.bfrom{position:relative;z-index:10;margin-top:clamp(10px,3vw,18px);font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,3.5vw,20px);color:#ffcc00;letter-spacing:clamp(1px,1vw,3px);text-shadow:0 0 12px rgba(255,204,0,.6);opacity:0;animation:slideUp .7s 2s forwards;text-align:center}
+@keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+.bsparkle{position:absolute;width:clamp(4px,1vw,7px);height:clamp(4px,1vw,7px);background:white;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:twinkle 2s ease-in-out infinite;opacity:0;pointer-events:none}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.5) rotate(0deg)}50%{opacity:1;transform:scale(1.2) rotate(180deg)}}
+.banner::after{content:'';position:absolute;inset:0;border-radius:inherit;border:2px solid transparent;background:linear-gradient(135deg,rgba(255,106,0,.5),rgba(255,45,120,.3),rgba(0,234,255,.3),rgba(180,0,255,.4)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:destination-out;mask-composite:exclude;pointer-events:none}
+
+/* ───── GAME SECTION ───── */
+.game-wrap{width:100%;max-width:860px}
+.game-title{
+  text-align:center;font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(18px,4vw,26px);color:#ffcc00;margin-bottom:12px;
+  text-shadow:0 0 16px rgba(255,204,0,.5);letter-spacing:2px;
+}
+.game-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.score-box{
+  font-size:clamp(12px,3vw,16px);font-weight:500;color:#fff;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,204,0,.3);
+  padding:6px 16px;border-radius:999px;letter-spacing:1px;
+}
+.lives{font-size:clamp(16px,4vw,22px)}
+#startBtn{
+  display:block;margin:0 auto 10px;
+  padding:10px 36px;border:none;border-radius:999px;cursor:pointer;
+  font-family:'Poppins',sans-serif;font-size:15px;font-weight:500;letter-spacing:1px;
+  background:linear-gradient(90deg,#ff6a00,#ff2d78);color:#fff;
+  box-shadow:0 0 24px rgba(255,80,0,.4);transition:transform .15s,box-shadow .15s;
+}
+#startBtn:hover{transform:scale(1.06);box-shadow:0 0 36px rgba(255,80,0,.6)}
+#gameCanvas{
+  display:block;width:100%;
+  border-radius:clamp(12px,2vw,20px);
+  border:2px solid rgba(255,204,0,.25);
+  box-shadow:0 0 40px rgba(255,80,0,.15);
+  cursor:none;touch-action:none;
+}
+.game-hint{text-align:center;font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;letter-spacing:.5px}
+</style>
+</head>
+<body>
+
+<!-- ── BANNER ── -->
+<div class="banner" id="banner">
+  <div class="splash s1"></div><div class="splash s2"></div><div class="splash s3"></div>
+  <div class="splash s4"></div><div class="splash s5"></div><div class="splash s6"></div>
+  <div class="blabel">✦ A Colorful Celebration ✦</div>
+  <div class="btitle">Happy Holi</div>
+  <div class="bsub">Festival of Colors & Joy</div>
+  <div class="bdiv"></div>
+  <div class="bwish">
+    May the vibrant colors of Holi fill your life with happiness, love, and laughter.<br>
+    Wishing you and your loved ones a joyful, bright, and memorable celebration.<br>
+    May every color paint your world with peace, prosperity, and endless smiles! 🌸
+  </div>
+  <div class="bfrom">— With Love, Anand 🎨</div>
+</div>
+
+<!-- ── GAME ── -->
+<div class="game-wrap">
+  <div class="game-title">🎯 Holi Color Splash — Catch the Balloons!</div>
+  <div class="game-meta">
+    <div class="score-box">🎨 Score: <span id="scoreVal">0</span></div>
+    <div class="score-box lives">❤️ <span id="livesVal">3</span></div>
+    <div class="score-box">⚡ Level: <span id="levelVal">1</span></div>
+  </div>
+  <button id="startBtn">🎮 Start Game</button>
+  <canvas id="gameCanvas"></canvas>
+  <p class="game-hint">🖱 Move mouse / touch to aim • Click / tap to throw color • Dodge the 💣 bombs!</p>
+</div>
+
+<script>
+/* ── Banner decorations ── */
+(function(){
+  const b=document.getElementById('banner');
+  const dc=['#ff6a00','#ff2d78','#ffcc00','#00eaff','#b400ff','#00ff88','#ff80ab','#80d8ff'];
+  for(let i=0;i<40;i++){
+    const d=document.createElement('div');d.className='bdot';
+    const s=Math.random()*14+4;
+    d.style.cssText=`width:${s}px;height:${s}px;background:${dc[Math.floor(Math.random()*dc.length)]};left:${Math.random()*100}%;bottom:${Math.random()*30}%;animation-duration:${Math.random()*5+4}s;animation-delay:${Math.random()*6}s;filter:blur(${Math.random()*2}px)`;
+    b.appendChild(d);
+  }
+  [[5,8],[92,10],[12,85],[88,80],[48,5],[60,90],[20,45],[78,50],[35,15],[65,75]].forEach(([x,y],i)=>{
+    const sp=document.createElement('div');sp.className='bsparkle';
+    sp.style.cssText=`left:${x}%;top:${y}%;animation-delay:${i*.3}s;animation-duration:${1.5+Math.random()}s`;
+    b.appendChild(sp);
+  });
+})();
+
+/* ── GAME ENGINE ── */
+const canvas=document.getElementById('gameCanvas');
+const ctx=canvas.getContext('2d');
+const scoreEl=document.getElementById('scoreVal');
+const livesEl=document.getElementById('livesVal');
+const levelEl=document.getElementById('levelVal');
+const startBtn=document.getElementById('startBtn');
+
+const COLORS=['#ff6a00','#ff2d78','#ffcc00','#00eaff','#b400ff','#00e676','#ff80ab','#40c4ff'];
+let W,H,dpr;
+let state='idle'; // idle | playing | dead
+let score,lives,level,frame,spawnTimer,speedMul;
+let balloons=[],bombs=[],splats=[],particles=[];
+let mouseX=0,mouseY=0;
+let shots=[];
+
+function resize(){
+  const wrap=canvas.parentElement;
+  const cssW=wrap.clientWidth;
+  const cssH=Math.min(Math.max(cssW*0.55,260),440);
+  dpr=window.devicePixelRatio||1;
+  canvas.style.width=cssW+'px';
+  canvas.style.height=cssH+'px';
+  canvas.width=Math.round(cssW*dpr);
+  canvas.height=Math.round(cssH*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  W=cssW; H=cssH;
+}
+window.addEventListener('resize',resize);
+resize();
+
+function resetGame(){
+  score=0;lives=3;level=1;frame=0;spawnTimer=0;speedMul=1;
+  balloons=[];bombs=[];splats=[];particles=[];shots=[];
+  scoreEl.textContent=0;livesEl.textContent=3;levelEl.textContent=1;
+}
+
+/* ── Input ── */
+function getCSSPos(e){
+  const r=canvas.getBoundingClientRect();
+  // Use CSS pixels directly (getBoundingClientRect is in CSS px)
+  return {x:e.clientX-r.left, y:e.clientY-r.top};
+}
+canvas.addEventListener('mousemove',e=>{
+  const p=getCSSPos(e); mouseX=p.x; mouseY=p.y;
+});
+canvas.addEventListener('touchmove',e=>{
+  e.preventDefault();
+  const r=canvas.getBoundingClientRect();
+  mouseX=e.touches[0].clientX-r.left; mouseY=e.touches[0].clientY-r.top;
+},{passive:false});
+canvas.addEventListener('click',e=>{
+  const p=getCSSPos(e); mouseX=p.x; mouseY=p.y; shoot();
+});
+canvas.addEventListener('touchstart',e=>{
+  e.preventDefault();
+  const r=canvas.getBoundingClientRect();
+  mouseX=e.touches[0].clientX-r.left; mouseY=e.touches[0].clientY-r.top;
+  shoot();
+},{passive:false});
+
+function shoot(){
+  if(state!=='playing')return;
+  const color=COLORS[Math.floor(Math.random()*COLORS.length)];
+  // Large hit radius so it's satisfying to pop balloons
+  shots.push({x:mouseX,y:mouseY,r:28,life:1,color});
+  checkShotHits();
+}
+
+function checkShotHits(){
+  const alive=[];
+  for(const sh of shots){
+    // check balloons
+    const newBalloons=[];
+    for(const b of balloons){
+      const dist=Math.hypot(sh.x-b.x, sh.y-b.y);
+      if(dist < sh.r+b.r){
+        burst(b.x,b.y,b.color,18);
+        score+=10*level;
+        scoreEl.textContent=score;
+      } else {
+        newBalloons.push(b);
+      }
+    }
+    balloons=newBalloons;
+
+    // check bombs
+    const newBombs=[];
+    for(const bm of bombs){
+      const dist=Math.hypot(sh.x-bm.x, sh.y-bm.y);
+      if(dist < sh.r+bm.r){
+        burst(bm.x,bm.y,'#ff4400',10);
+        loseLife();
+      } else {
+        newBombs.push(bm);
+      }
+    }
+    bombs=newBombs;
+    alive.push(sh);
+  }
+  shots=alive;
+}
+
+function loseLife(){
+  lives--;livesEl.textContent=lives;
+  if(lives<=0){state='dead';}
+}
+
+function burst(x,y,color,n){
+  for(let i=0;i<n;i++){
+    const angle=Math.random()*Math.PI*2;
+    const spd=Math.random()*4+2;
+    particles.push({x,y,vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd,r:Math.random()*6+3,color,life:1,decay:Math.random()*.04+.02});
+  }
+  splats.push({x,y,r:0,maxR:Math.random()*30+20,color,alpha:0.7});
+}
+
+/* ── Spawn ── */
+function spawnBalloon(){
+  const x=Math.random()*(W-60)+30;
+  const color=COLORS[Math.floor(Math.random()*COLORS.length)];
+  const spd=(Math.random()*1.2+0.8)*speedMul;
+  balloons.push({x,y:-30,r:18+Math.random()*8,vy:spd,vx:(Math.random()-.5)*1.2,color,wobble:Math.random()*Math.PI*2});
+}
+function spawnBomb(){
+  const x=Math.random()*(W-60)+30;
+  const spd=(Math.random()*1.5+1)*speedMul;
+  bombs.push({x,y:-30,r:16,vy:spd,vx:(Math.random()-.5)*.8,rot:0});
+}
+
+/* ── Draw helpers ── */
+function drawBalloon(b){
+  ctx.save();
+  // body
+  const grad=ctx.createRadialGradient(b.x-b.r*.3,b.y-b.r*.3,2,b.x,b.y,b.r);
+  grad.addColorStop(0,'rgba(255,255,255,.5)');
+  grad.addColorStop(1,b.color);
+  ctx.beginPath();
+  ctx.ellipse(b.x,b.y,b.r,b.r*1.15,0,0,Math.PI*2);
+  ctx.fillStyle=grad;
+  ctx.fill();
+  // knot
+  ctx.beginPath();
+  ctx.moveTo(b.x,b.y+b.r*1.15);
+  ctx.lineTo(b.x-4,b.y+b.r*1.3);
+  ctx.lineTo(b.x+4,b.y+b.r*1.3);
+  ctx.closePath();
+  ctx.fillStyle=b.color;
+  ctx.fill();
+  // string
+  ctx.beginPath();
+  ctx.moveTo(b.x,b.y+b.r*1.35);
+  ctx.lineTo(b.x+Math.sin(b.wobble)*8,b.y+b.r*1.35+28);
+  ctx.strokeStyle='rgba(255,255,255,.4)';
+  ctx.lineWidth=1.5;
+  ctx.stroke();
+  ctx.restore();
+}
+function drawBomb(bm){
+  ctx.save();
+  ctx.translate(bm.x,bm.y);
+  ctx.rotate(bm.rot);
+  // body
+  ctx.beginPath();
+  ctx.arc(0,0,bm.r,0,Math.PI*2);
+  ctx.fillStyle='#2a2a2a';
+  ctx.fill();
+  ctx.strokeStyle='#555';
+  ctx.lineWidth=2;
+  ctx.stroke();
+  // fuse
+  ctx.beginPath();
+  ctx.moveTo(0,-bm.r);
+  ctx.quadraticCurveTo(10,-bm.r-12,6,-bm.r-20);
+  ctx.strokeStyle='#aaa';ctx.lineWidth=2.5;ctx.stroke();
+  // spark
+  if(Math.random()>.5){
+    ctx.beginPath();
+    ctx.arc(6,-bm.r-20,3,0,Math.PI*2);
+    ctx.fillStyle='#ffcc00';
+    ctx.fill();
+  }
+  // label
+  ctx.font=`bold ${bm.r}px serif`;
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillStyle='#fff';
+  ctx.fillText('💣',0,1);
+  ctx.restore();
+}
+function drawShot(s){
+  ctx.save();
+  ctx.globalAlpha=s.life;
+  const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r);
+  g.addColorStop(0,'rgba(255,255,255,.9)');
+  g.addColorStop(1,s.color+'00');
+  ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+  ctx.fillStyle=g;ctx.fill();
+  ctx.restore();
+}
+function drawCursor(){
+  ctx.save();
+  ctx.beginPath();ctx.arc(mouseX,mouseY,14,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,204,0,.7)';ctx.lineWidth=2;ctx.stroke();
+  ctx.beginPath();ctx.arc(mouseX,mouseY,3,0,Math.PI*2);
+  ctx.fillStyle='#ffcc00';ctx.fill();
+  // crosshair
+  ctx.strokeStyle='rgba(255,204,0,.5)';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(mouseX-20,mouseY);ctx.lineTo(mouseX-8,mouseY);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(mouseX+8,mouseY);ctx.lineTo(mouseX+20,mouseY);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(mouseX,mouseY-20);ctx.lineTo(mouseX,mouseY-8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(mouseX,mouseY+8);ctx.lineTo(mouseX,mouseY+20);ctx.stroke();
+  ctx.restore();
+}
+
+/* ── Background ── */
+function drawBG(){
+  const g=ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#1a0030');g.addColorStop(.5,'#0b002a');g.addColorStop(1,'#0d1a00');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+}
+
+/* ── Main loop ── */
+function loop(){
+  requestAnimationFrame(loop);
+  ctx.clearRect(0,0,W,H);
+  drawBG();
+
+  // splats (paint marks on floor)
+  splats.forEach(s=>{
+    if(s.r<s.maxR)s.r+=1.5;
+    ctx.save();ctx.globalAlpha=s.alpha*.5;
+    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=s.color;ctx.fill();ctx.restore();
+  });
+
+  if(state==='playing'){
+    frame++;
+    // leveling
+    const newLevel=1+Math.floor(score/200);
+    if(newLevel!==level){level=newLevel;speedMul=1+level*.18;levelEl.textContent=level;}
+
+    spawnTimer++;
+    const spawnRate=Math.max(28,55-level*3);
+    if(spawnTimer>=spawnRate){
+      spawnTimer=0;
+      if(Math.random()<.72) spawnBalloon(); else spawnBomb();
+    }
+
+    // update balloons
+    balloons=balloons.filter(b=>{
+      b.wobble+=.06;
+      b.x+=b.vx+Math.sin(b.wobble)*.5;
+      b.y+=b.vy;
+      if(b.y>H+40){loseLife();return false;}
+      drawBalloon(b);
+      return true;
+    });
+
+    // update bombs
+    bombs=bombs.filter(bm=>{
+      bm.x+=bm.vx;bm.y+=bm.vy;bm.rot+=.04;
+      if(bm.x<0||bm.x>W)bm.vx*=-1;
+      if(bm.y>H+40){return false;}
+      drawBomb(bm);
+      return true;
+    });
+
+    // shots
+    shots=shots.filter(s=>{s.life-=.08;drawShot(s);return s.life>0;});
+
+    // particles
+    particles=particles.filter(p=>{
+      p.x+=p.vx;p.y+=p.vy;p.vy+=.12;p.life-=p.decay;
+      ctx.save();ctx.globalAlpha=p.life;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);
+      ctx.fillStyle=p.color;ctx.fill();ctx.restore();
+      return p.life>0;
+    });
+
+    drawCursor();
+
+    // HUD flash if low lives
+    if(lives===1){
+      ctx.save();ctx.globalAlpha=.06*Math.sin(frame*.15)+.04;
+      ctx.fillStyle='#ff2d78';ctx.fillRect(0,0,W,H);ctx.restore();
+    }
+  }
+
+  if(state==='idle'){
+    // idle screen
+    ctx.save();
+    ctx.fillStyle='rgba(0,0,0,.55)';ctx.fillRect(0,0,W,H);
+    ctx.font=`bold clamp(22px,5vw,32px) 'Playfair Display',serif`;
+    ctx.textAlign='center';ctx.textBaseline='middle';
+    const fs=Math.min(W*.06,32);
+    ctx.font=`bold ${fs}px 'Poppins',sans-serif`;
+    ctx.fillStyle='#ffcc00';
+    ctx.fillText('🎨 Click START to play!',W/2,H/2-16);
+    ctx.font=`${fs*.6}px 'Poppins',sans-serif`;
+    ctx.fillStyle='rgba(255,255,255,.5)';
+    ctx.fillText('Catch 🎈 balloons • Dodge 💣 bombs',W/2,H/2+22);
+    ctx.restore();
+  }
+
+  if(state==='dead'){
+    ctx.save();
+    ctx.fillStyle='rgba(0,0,0,.7)';ctx.fillRect(0,0,W,H);
+    const fs=Math.min(W*.07,36);
+    ctx.font=`bold ${fs}px 'Playfair Display',serif`;
+    ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillStyle='#ff2d78';
+    ctx.fillText('💀 Game Over!',W/2,H/2-40);
+    ctx.font=`${fs*.6}px 'Poppins',sans-serif`;
+    ctx.fillStyle='#ffcc00';
+    ctx.fillText(`Final Score: ${score}  |  Level: ${level}`,W/2,H/2+4);
+    ctx.fillStyle='rgba(255,255,255,.5)';
+    ctx.font=`${fs*.45}px 'Poppins',sans-serif`;
+    ctx.fillText('Click START to play again 🎮',W/2,H/2+42);
+    ctx.restore();
+    startBtn.style.display='block';
+  }
+}
+
+startBtn.addEventListener('click',()=>{
+  resetGame();state='playing';startBtn.style.display='none';
+});
+
+loop();
+</script>
+</body>
+</html>
